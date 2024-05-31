@@ -1,9 +1,8 @@
 "use client";
-import React, {useEffect,useState} from "react";
+import React, {useEffect,useRef,useState} from "react";
 import Image from "next/image";
 import firstBG from "@/images/10199671.png";
 import backBG from "@/images/8545046.jpg";
-import { useWindowSize } from "@/component/useWindowSize";
 
 export default function Home() {
 
@@ -11,16 +10,31 @@ export default function Home() {
 
   const [scale, setScale] = useState(1);
   const [bgScale, setBGScale] = useState(1);
+  const [blur, setBlur] = useState(0);
+  //因為用來記錄目前scroll的位置，所以是number
+  const currentScaleSize = useRef<number|null>(null);
 
   useEffect(()=>{
+    //如果 window 還沒有準備好就不做這樣的操作
     if (typeof window !== "undefined") {
       const handleScroll = () => {
+
         setScrollY(window.scrollY);
+
+        // 150 是 scrolling 的速度 / 比例
         const scaleValue = 1 + (window.scrollY / 150);
-        const bgScaleValue = window.scrollY >= 1138 ? 1.2276 : 1 + (window.scrollY / 5000);
+
+        // 當 scrollY 的 高度到了一定的高度以後，才會被定格。不然繼續 1 + scroll 的 比例
+        const bgScaleValue = window.scrollY >= 1138 ? currentScaleSize.current ?? 0 : 1 + (window.scrollY / 5000);
+
+        // setState 反饋給 Dom
         setScale(scaleValue);
         setBGScale(bgScaleValue);
-        console.log("Scrolling: ", window.scrollY); // Debug: Check if scroll is detected
+        // 1 太糊了，所以 -1 ， 景深控制
+        setBlur(scaleValue - 1);
+
+        // 使用 useRef 來記錄 bgScaleValue 的值，useRef 可以即時紀錄並且不會因為rendering 而被重置
+        currentScaleSize.current = bgScaleValue;
       };
 
       window.addEventListener("scroll", handleScroll);
@@ -37,7 +51,7 @@ export default function Home() {
 
   return (
     <main className="h-full w-full">
-      <div className={`fixed top-0 left-0 w-full h-full z-50`} style={{transform :`scale(${scale})`}}>
+      <div className={`fixed top-0 left-0 w-full h-full z-50`} style={{transform :`scale(${scale})`, filter:`blur(${blur}px)`}} >
         <Image
           src={firstBG}
           alt="hero image"
