@@ -1,0 +1,55 @@
+const CookiesKey = {
+    isFooterHidden: "isFooterHidden" as const,
+    isDeliveryBarAppear: "deliveryBarAppear" as const,
+    i18next: "i18next" as const,
+    memberForm: "memberForm" as const,
+    setCart: "setCart" as const,
+    deviceId: "deviceId" as const,
+    accessToken: "accessToken" as const,
+    guestWithCartData: "guestWithCartData" as const,
+    loginSessionToken: "loginSessionToken" as const,
+    registrationSessionToken: "registrationSessionToken" as const,
+    addCartBeforeMemberLogin: "addCartBeforeMemberLogin" as const,
+    addCartInStep2: "addCartInStep2" as const,
+    openTargetSetProductPopupBySkuCode: "openTargetSetProductPopupBySkuCode" as const,
+    targetPageToBeRedirectedTo: "targetPageToBeRedirectedTo" as const,
+    isCookieAccepted: "isCookieAccepted" as const,
+    addCartIsContinue: "addCartIsContinue" as const,
+    MPGSError: "MPGSError" as const,
+    popupMessageContent: "popupMessageContent" as const,
+    staticMessageContent: "staticMessageContent" as const,
+    nextToFieldMessageContent: "nextToFieldMessageContent" as const,
+    reminderMessageContent: "reminderMessageContent" as const,
+    sourceForGetCart: "sourceForGetCart" as const,
+    isPopupBannerClosed: "isPopupBannerClosed" as const,
+    isFloatingPopBannerClosed: "isFloatingPopBannerClosed" as const,
+    verifyEmailToken: "verifyEmailToken" as const,
+    branchSelectionStep: "branchSelectionStep" as const,
+    globalSelectedProductSkuCode: "globalSelectedProductSkuCode" as const,
+    branchCode: "branchCode" as const,
+    productArchorId: "productArchorId" as const,
+    stopProductArchor: "stopProductArchor" as const,   // in ms
+    isPaymentInProgress: "isPaymentInProgress" as const,
+    targetEnquiryOption: "targetEnquiryOption" as const,
+    loginSuccess: "loginSuccess" as const,
+    mobileNumber: "mobileNumber" as const,
+    countryCode: "countryCode" as const,
+    productLocate: "productLocate" as const,
+    couponMode: "couponMode" as const,
+    sourceForGetCartInAddOn: "sourceForGetCartInAddOn" as const,
+    isRegistrationSuccess: "isRegistrationSuccess" as const,
+    isLoginInvalid: "isLoginInvalid" as const,
+    shouldSkipAddOnPage: "shouldSkipAddOnPage" as const,
+    successfulAddToCartReminderSkuCode: "successfulAddToCartReminderSkuCode" as const,
+    shouldStopAlertDisplay: "shouldStopAlertDisplay" as const,
+    addPaymentInfoGTM: "addPaymentInfoGTM" as const,
+    shouldSkipBrowserChecking: "shouldSkipBrowserChecking" as const,
+    registeredEmail: "registeredEmail" as const,
+  };
+  
+  type CookiesKeyType = keyof typeof CookiesKey;
+  
+  export type { CookiesKeyType };
+  
+  export { CookiesKey };
+  

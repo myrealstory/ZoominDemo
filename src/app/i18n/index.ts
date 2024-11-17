@@ -6,7 +6,7 @@ type LocaleKeysType = "en" | "tc";
 
 const locales: LocaleKeysType[] = ["en", "tc"];
 const defaultLocale: LocaleKeysType = "en";
-const defaultNameSpace = "common";
+const defaultNameSpace = "main";
 const LANGUAGE = {
     EN: "en" as const ,
     TC: "tc" as const
@@ -23,7 +23,7 @@ const getOption = (lang : LocaleKeysType = defaultLocale, namespace = defaultNam
     };
 };
 
-const initI18next = async (lang: LocaleKeysType, namespace? : string) => {
+const initI18next = async (lang: LocaleKeysType, namespace?:string) => {
     const i18nInstance = createInstance();
     await i18nInstance
     .use(initReactI18next)

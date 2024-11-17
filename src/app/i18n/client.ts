@@ -5,22 +5,28 @@ import {initReactI18next, useTranslation as useTranslationOrg} from "react-i18ne
 import resourcesToBackend from 'i18next-resources-to-backend';
 import LanguageDetector from "i18next-browser-languagedetector";
 import { LocaleKeysType,  getOption } from '.';
-import { use } from 'react';
+
+const resources = {
+    en: { main: require('./en/main.json') },
+    tc: { main: require('./tc/main.json') },
+};
+
 
 i18next
     .use(initReactI18next)
     .use(LanguageDetector)
-    .use(resourcesToBackend((lng:string, ns:string)=>
-    import(`./${lng}/${ns}.json`)))
+    .use(resourcesToBackend((lng:string, ns:string)=> import(`./${lng}/${ns}.json`)))
     .init({
+        resources,
         ...getOption(),
+        debug: true,
         detection: {
             order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
             caches: ['cookie']
-        }
+        },
     });
 
-const useTranslation = (lang: LocaleKeysType, namespace? : string, option?: {keyPrefix: string}) => {
+const useTranslation = (lang: LocaleKeysType, namespace?: string, option?: {keyPrefix: string}) => {
     if(i18next.resolvedLanguage !== lang){
         i18next.changeLanguage(lang);
     }

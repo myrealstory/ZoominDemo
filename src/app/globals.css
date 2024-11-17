@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html,body {
+  min-height: 6000px;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #FFF;
+}
+
+.custom-Select select{
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .straightLine {
+    @apply after:absolute after:left-[5.5rem] after:top-0 after:border-l after:border-secondaryColor after:w-2 after:h-full after:content-[''] ;
+  }
+
+  .dot {
+    @apply after:absolute  after:top-1/2 after:-translate-y-1/2 after:border-2 after:rounded-full  after:content-[''];
+  }
+  .activeDot {
+    @apply after:bg-secondaryColor after:border-secondaryColor after:w-4 after:h-4 after:left-[5.05rem];
+  }
+  .deactiveDot {
+    @apply after:bg-primaryColor after:border-none after:w-3 after:h-3 after:left-[5.2rem] after:z-10;
+  } 
+
+  .Spin {
+    @apply lg:text-3xl text-xl animate-spin;
+  }
+
+  
+  .custom-Select select, .custom-Select-row select {
+    @apply w-full border-primaryColor border border-solid rounded-md py-2 bg-transparent;
+  }
+
+  .custom-Select select {
+    @apply relative w-full h-auto border-primaryColor border border-solid rounded-2xl py-1 px-4 bg-transparent;
+
+  }
+  .custom-Select select:focus {
+    @apply border-secondaryColor outline-secondaryColor;
+  }
+  .custom-Select select option {
+    @apply text-secondaryColor lg:text-sm text-xs p-1 bg-transparent;
+  }
+  .custom-Select label {
+    @apply text-secondaryColor lg:text-base text-sm flex justify-start items-center;
+  }
+  .custom-Select {
+    @apply flex flex-col text-secondaryColor lg:text-base text-sm relative;
+  }
+  .custom-Select-row {
+    @apply flex flex-row gap-2 text-secondaryColor lg:text-base text-sm  relative;
+  }
+
+  /* .custom-Select select::after{
+    @apply content-["⮟"] text-base absolute bottom-5 right-4 z-10 w-5 h-5 border border-solid border-transparent cursor-pointer ;
+  } */
+}

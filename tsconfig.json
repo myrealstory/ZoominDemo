@@ -1,6 +1,7 @@
 {
+  // "extends": "next",
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
@@ -22,14 +23,6 @@
     "typeRoots": [
       "./node_modules/@types",
       "./typings"
-    ],
-    "plugins": [
-      {
-        "name": "next",
-        "transform": {
-          "^.+\\.(png|jpg)$": "jest-transform-stub"
-        }
-      } // Remove this extra closing curly brace
     ],
     "paths": {
       "@/*": [
@@ -56,13 +49,19 @@
       "@/public/*": [
         "./public/*"
       ]
-    } // Remove this extra closing square bracket
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ] // Remove this extra closing square bracket
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "next.config.js"
   ],
   "exclude": [
     "node_modules"

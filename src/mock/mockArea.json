@@ -1,0 +1,672 @@
+{
+  "clientData": {
+    "country": [
+      {
+        "id": 1,
+        "nameEn": "Hong Kong",
+        "nameZh": "香港",
+        "code": "HK",
+        "region1": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": 2,
+        "nameEn": "Macau",
+        "nameZh": "澳門",
+        "code": "MO",
+        "region1": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "id": 3,
+        "nameEn": "China",
+        "nameZh": "中國",
+        "code": "CN",
+        "region1": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "id": 4,
+        "nameEn": "South Korea",
+        "nameZh": "韩国",
+        "code": "",
+        "region1": []
+      },
+      {
+        "id": 5,
+        "nameEn": "Japan",
+        "nameZh": "日本",
+        "code": "",
+        "region1": []
+      },
+      {
+        "id": 6,
+        "nameEn": "Thailand",
+        "nameZh": "泰国",
+        "code": "",
+        "region1": [
+          13,
+          14,
+          15
+        ]
+      },
+      {
+        "id": 7,
+        "nameEn": "Vietnam",
+        "nameZh": "越南",
+        "code": "",
+        "region1": []
+      },
+      {
+        "id": 8,
+        "nameEn": "Singapore",
+        "nameZh": "新加坡",
+        "code": "",
+        "region1": []
+      },
+      {
+        "id": 9,
+        "nameEn": "Malaysia",
+        "nameZh": "马来西亚",
+        "code": "",
+        "region1": []
+      },
+      {
+        "id": 10,
+        "nameEn": "Indonesia",
+        "nameZh": "印度尼西亚",
+        "code": "",
+        "region1": []
+      },
+      {
+        "id": 11,
+        "nameEn": "Philippines",
+        "nameZh": "菲律賓",
+        "code": "",
+        "region1": []
+      },
+      {
+        "id": 12,
+        "nameEn": "India",
+        "nameZh": "印度",
+        "code": "",
+        "region1": []
+      },
+      {
+        "id": 13,
+        "nameEn": "Sydney",
+        "nameZh": "悉尼",
+        "code": "",
+        "region1": [
+          16
+          ]
+      }
+    ],
+    "region1": [
+      {
+        "id": 1,
+        "enName": "HK Island",
+        "zhName": "香港島",
+        "region2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          30
+        ]
+      },
+      {
+        "id": 2,
+        "enName": "Kowloon",
+        "zhName": "九龍",
+        "region2": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29
+        ]
+      },
+      {
+        "id": 3,
+        "enName": "New Territories",
+        "zhName": "新界",
+        "region2": [
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      {
+        "id": 4,
+        "enName": "Outlying Islands",
+        "zhName": "離島",
+        "region2": [
+          41
+        ]
+      },
+      {
+        "id": 5,
+        "enName": "Macau Peninsula",
+        "zhName": "澳門半島",
+        "region2": []
+      },
+      {
+        "id": 6,
+        "enName": "Taipa",
+        "zhName": "氹仔",
+        "region2": []
+      },
+      {
+        "id": 7,
+        "enName": "Coloane",
+        "zhName": "路環",
+        "region2": [
+          42,
+          43,
+          44,
+          45
+        ]
+      },
+      {
+        "id": 8,
+        "enName": "Guang Zhou",
+        "zhName": "廣州",
+        "region2": [
+          46,
+          47,
+          48
+        ]
+      },
+      {
+        "id": 9,
+        "enName": "Shang Hai",
+        "zhName": "上海",
+        "region2": [
+          49,
+          50,
+          51,
+          52,
+          53,
+          54
+        ]
+      },
+      {
+        "id": 10,
+        "enName": "Chang Sha",
+        "zhName": "長沙",
+        "region2": [
+          55
+        ]
+      },
+      {
+        "id": 11,
+        "enName": "Zhu Hai",
+        "zhName": "珠海",
+        "region2": [
+          56,
+          57
+        ]
+      },
+      {
+        "id": 12,
+        "enName": "Shen Zhen",
+        "zhName": "กรุงเทพฯ",
+        "region2": []
+      },
+      {
+        "id": 13,
+        "enName": "Bangkok",
+        "zhName": "曼谷",
+        "region2": [
+          57,
+          58,
+          59,
+          60,
+          61
+        ]
+      },
+      {
+        "id": 14,
+        "enName": "Chiang Mai",
+        "zhName": "清迈",
+        "region2": [
+          62,
+          63,
+          64,
+          65,
+          66
+        ]
+      },
+      {
+        "id": 15,
+        "enName": "Phuket",
+        "zhName": "普吉岛",
+        "region2": [
+          67,
+          68,
+          69,
+          70,
+          71
+        ]
+      },
+      {
+        "id": 16,
+        "enName": "Sydney",
+        "zhName": "悉尼",
+        "region2": [
+          72,
+          73
+        ]
+      }
+    ],
+    "region2": [
+      {
+        "id": 1,
+        "enName": "Sai Wan",
+        "zhName": "西環"
+      },
+      {
+        "id": 2,
+        "enName": "Sheung Wan",
+        "zhName": "上環"
+      },
+      {
+        "id": 3,
+        "enName": "Central",
+        "zhName": "中環"
+      },
+      {
+        "id": 4,
+        "enName": "Wan Chai",
+        "zhName": "灣仔"
+      },
+      {
+        "id": 5,
+        "enName": "Causeway Bay",
+        "zhName": "銅鑼灣"
+      },
+      {
+        "id": 6,
+        "enName": "Tin Hau",
+        "zhName": "天后"
+      },
+      {
+        "id": 7,
+        "enName": "Fortress Hill",
+        "zhName": "炮台山"
+      },
+      {
+        "id": 8,
+        "enName": "North Point",
+        "zhName": "北角"
+      },
+      {
+        "id": 9,
+        "enName": "Quarry Bay",
+        "zhName": "鰂魚涌"
+      },
+      {
+        "id": 10,
+        "enName": "Sai Wan Ho",
+        "zhName": "西灣河"
+      },
+      {
+        "id": 11,
+        "enName": "Shau Kei Wan",
+        "zhName": "筲箕灣"
+      },
+      {
+        "id": 12,
+        "enName": "Chai Kwan",
+        "zhName": "柴灣"
+      },
+      {
+        "id": 13,
+        "enName": "Aberdeen",
+        "zhName": "香港仔"
+      },
+      {
+        "id": 14,
+        "enName": "Lai Chi Kok",
+        "zhName": "荔枝角"
+      },
+      {
+        "id": 15,
+        "enName": "Cheung Sha Wan",
+        "zhName": "長沙灣"
+      },
+      {
+        "id": 16,
+        "enName": "Sham Shui Po",
+        "zhName": "深水埗"
+      },
+      {
+        "id": 17,
+        "enName": "Prince Edward",
+        "zhName": "太子"
+      },
+      {
+        "id": 18,
+        "enName": "Mong Kok",
+        "zhName": "旺角"
+      },
+      {
+        "id": 19,
+        "enName": "Tai Kok Tsui",
+        "zhName": "天后"
+      },
+      {
+        "id": 20,
+        "enName": "Yau Ma Tei",
+        "zhName": "油麻地"
+      },
+      {
+        "id": 21,
+        "enName": "Jordan",
+        "zhName": "佐敦"
+      },
+      {
+        "id": 22,
+        "enName": "Tsim Sha Tsui",
+        "zhName": "尖沙咀"
+      },
+      {
+        "id": 23,
+        "enName": "Hung Hom",
+        "zhName": "紅磡"
+      },
+      {
+        "id": 24,
+        "enName": "To Kwa Wan",
+        "zhName": "土瓜灣"
+      },
+      {
+        "id": 25,
+        "enName": "Kowloon City",
+        "zhName": "九龍城"
+      },
+      {
+        "id": 26,
+        "enName": "San Po Kong",
+        "zhName": "新蒲崗"
+      },
+      {
+        "id": 27,
+        "enName": "Kowloon Bay",
+        "zhName": "九龍灣"
+      },
+      {
+        "id": 28,
+        "enName": "Ngau Tau Kok",
+        "zhName": "牛頭角"
+      },
+      {
+        "id": 29,
+        "enName": "Kwun Tong",
+        "zhName": "觀塘"
+      },
+      {
+        "id": 30,
+        "enName": "Tin Shui Wai",
+        "zhName": "天水圍"
+      },
+      {
+        "id": 31,
+        "enName": "Yuen Long",
+        "zhName": "元朗"
+      },
+      {
+        "id": 32,
+        "enName": "Tuen Mun",
+        "zhName": "屯門"
+      },
+      {
+        "id": 33,
+        "enName": "Tsuen Wan",
+        "zhName": "荃灣"
+      },
+      {
+        "id": 34,
+        "enName": "Kwai Chung",
+        "zhName": "葵涌"
+      },
+      {
+        "id": 35,
+        "enName": "Tseung Kwan O",
+        "zhName": "將軍澳"
+      },
+      {
+        "id": 36,
+        "enName": "Tai Wai",
+        "zhName": "大圍"
+      },
+      {
+        "id": 37,
+        "enName": "Sha Tin",
+        "zhName": "沙田"
+      },
+      {
+        "id": 38,
+        "enName": "Fanling",
+        "zhName": "粉嶺"
+      },
+      {
+        "id": 39,
+        "enName": "Sheung Shui",
+        "zhName": "上水"
+      },
+      {
+        "id": 40,
+        "enName": "Tung Chung",
+        "zhName": "東涌"
+      },
+      {
+        "id": 41,
+        "enName": "Fukuda",
+        "zhName": "福田"
+      },
+      {
+        "id": 42,
+        "enName": "Louwu",
+        "zhName": "路湖"
+      },
+      {
+        "id": 43,
+        "enName": "Longhua",
+        "zhName": "龍華"
+      },
+      {
+        "id": 44,
+        "enName": "Nanshan",
+        "zhName": "南山"
+      },
+      {
+        "id": 45,
+        "enName": "Tian He",
+        "zhName": "天河"
+      },
+      {
+        "id": 46,
+        "enName": "Bai Yun",
+        "zhName": "白雲"
+      },
+      {
+        "id": 47,
+        "enName": "Panyu",
+        "zhName": "番禺"
+      },
+      {
+        "id": 48,
+        "enName": "Huang Pu",
+        "zhName": "黃浦"
+      },
+      {
+        "id": 49,
+        "enName": "Putuo",
+        "zhName": "普陀"
+      },
+      {
+        "id": 50,
+        "enName": "Minhang",
+        "zhName": "閔行"
+      },
+      {
+        "id": 51,
+        "enName": "Baoshan",
+        "zhName": "寶山"
+      },
+      {
+        "id": 52,
+        "enName": "Pudong",
+        "zhName": "浦東"
+      },
+      {
+        "id": 53,
+        "enName": "Xu Hui",
+        "zhName": "徐匯"
+      },
+      {
+        "id": 54,
+        "enName": "Furong",
+        "zhName": "芙蓉"
+      },
+      {
+        "id": 55,
+        "enName": "GongBei",
+        "zhName": "拱北"
+      },
+      {
+        "id": 56,
+        "enName": "QianShan",
+        "zhName": "前山"
+      },
+      {
+        "id": 57,
+        "enName": "Siam Square",
+        "zhName": "暹罗广场"
+      },
+      {
+        "id": 58,
+        "enName": "Silom",
+        "zhName": "是隆"
+      },
+      {
+        "id": 59,
+        "enName": "Sukhumvit",
+        "zhName": "素坤逸"
+      },
+      {
+        "id": 60,
+        "enName": "Ratchathewi",
+        "zhName": "拉差贴威"
+      },
+      {
+        "id": 61,
+        "enName": "Chatuchak",
+        "zhName": "乍都节"
+      },
+      {
+        "id": 62,
+        "enName": "Old City",
+        "zhName": "旧城"
+      },
+      {
+        "id": 63,
+        "enName": "Nimmanhaemin",
+        "zhName": "宁曼路"
+      },
+      {
+        "id": 64,
+        "enName": "Chang Phueak",
+        "zhName": "昌普"
+      },
+      {
+        "id": 65,
+        "enName": "San Kamphaeng",
+        "zhName": "桑甘班"
+      },
+      {
+        "id": 66,
+        "enName": "Hang Dong",
+        "zhName": "杭东"
+      },
+      {
+        "id": 67,
+        "enName": "Patong",
+        "zhName": "芭东"
+      },
+      {
+        "id": 68,
+        "enName": "Karon",
+        "zhName": "卡隆"
+      },
+      {
+        "id": 69,
+        "enName": "Kata",
+        "zhName": "卡塔"
+      },
+      {
+        "id": 70,
+        "enName": "Phuket Town",
+        "zhName": "普吉镇"
+      },
+      {
+        "id": 71,
+        "enName": "Rawai",
+        "zhName": "拉崴"
+      },
+      {
+        "id": 72,
+        "enName": "Melbourne",
+        "zhName": "墨尔本"
+      },
+      {
+        "id": 73,
+        "enName": "Gold Coast",
+        "zhName": "黄金海岸"
+      }
+    ]
+  }
+}
+  
