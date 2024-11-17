@@ -34,7 +34,7 @@ interface CustomSelectProps {
   lang: LocaleKeysType;
 }
 
-const CustomSelect: React.FC<CustomSelectProps> = ({
+export const CustomSelect: React.FC<CustomSelectProps> = ({
   label,
   options,
   firstOption,
@@ -126,4 +126,3 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   );
 };
 
-export default CustomSelect;

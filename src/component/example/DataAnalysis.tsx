@@ -3,7 +3,7 @@ import { AreasListType, CLIENTDataProps, CountryProps } from "@/type/Area";
 import ClientData from "@/mock/mockArea.json";
 import { LocaleKeysType } from "@/app/i18n";
 import { useTranslation } from "@/app/i18n/client";
-import CustomSelect from "@/component/CustomSelect";
+import { CustomSelect } from "@/component/CustomSelect";
 import { useMemo, useState } from "react";
 import { combineEnZH, mapRegionsToAreas } from "@/utils/helper";
 
