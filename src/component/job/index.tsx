@@ -19,6 +19,7 @@ const JobExperience = ({lang}:{lang:LocaleKeysType}) => {
     const { translate: t } = useTranslation(lang);
     const {width} = useWindowSize();
     const jobsExperience = JobArray();
+    const jobExperienceRef = React.useRef<HTMLDivElement>(null);
     const personalInfo = PersonalInfo(lang);
     const allYears = getYearsInRange("2019-01-01","now");
     const [jobToogle, setJobToogle] = useState<number | null>(null);
@@ -39,7 +40,10 @@ const JobExperience = ({lang}:{lang:LocaleKeysType}) => {
     }
 
     return (
-        <div className="flex lg:flex-row flex-col w-full md:h-full h-fit mt-10 gap-20">
+        <section 
+            className="flex lg:flex-row flex-col w-full md:h-full h-fit mt-10 gap-20" id="jobExperience"
+            ref={jobExperienceRef}
+            >
             <div className="relative z-10 md:max-w-[400px] w-full flex flex-shrink-0 flex-col justify-center md:pl-14 md:py-10 p-4 bg-secondaryColor text-white">
                 {personalInfo.map((info)=>(
                     <div className="flex flex-shrink-0 items-center gap-4 p-4" key={info.id}>
@@ -112,7 +116,7 @@ const JobExperience = ({lang}:{lang:LocaleKeysType}) => {
                 </div>
             )}
             
-        </div>
+        </section>
     )
 
 }

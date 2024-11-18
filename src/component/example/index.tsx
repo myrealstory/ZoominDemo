@@ -4,6 +4,7 @@ import { useTranslation } from "@/app/i18n/client";
 import { Upload } from "./Upload";
 import { PasswordInput } from "./PasswordInput";
 import { DataAnalysis } from "./DataAnalysis";
+import Link from "next/link";
 
 export const Example = ({ lang }: { lang: LocaleKeysType }) => {
   const { translate: t } = useTranslation(lang);
@@ -30,7 +31,7 @@ export const Example = ({ lang }: { lang: LocaleKeysType }) => {
         </div>
       </div>
       <div className="bg-primaryColor text-secondaryColor text-sm py-3 text-center">
-        <p>{t("examples.endContent")}</p>
+        <Link href={"#jobExperience"}>{t("examples.endContent")}</Link>
       </div>
     </div>
   );

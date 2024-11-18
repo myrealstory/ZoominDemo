@@ -22,7 +22,7 @@ i18next
         debug: true,
         detection: {
             order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
-            caches: ['cookie']
+            caches: ['cookie',"localStorage"]
         },
     });
 

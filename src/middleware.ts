@@ -1,69 +1,40 @@
-import { NextResponse, NextRequest } from "next/server";
-// import { RequestCookies, ResponseCookies } from "next/dist/server/web/spec-extension/cookies";
+import { NextRequest, NextResponse } from "next/server";
 import acceptLanguage from "accept-language";
-import { locales } from "./app/i18n";
-import { getLangFromString } from "./utils/commonUtils";
-import { CookiesKey } from "./constants/cookies";
-
-export const config = {
-    matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)"],
-    unstable_allowDynamic: [
-      "**/node_modules/lodash/_root.js", // allows a single file
-    ],
-  }
+import { cookieName, defaultLocale, LocaleKeysType, locales } from "./app/i18n";
 
 acceptLanguage.languages(locales);
 
-const checkLocal = (request: NextRequest, response: NextResponse) => {
-    // HJSRR-3428
-    // if ([`/${ROUTES.APP}`, `/${ROUTES.MOBILE_PAYMENT}`, `/${ROUTES.PLAYGROUND}`].includes(request.nextUrl.pathname)) {
-    //   return response;
-    // } 
-  
-    const langFromPathname = getLangFromString(request.nextUrl.pathname);
-    const queryParams = request.nextUrl.search;
-  
-    // Redirect if lang in path is not supported
-    if (
-      !locales.some(locale => request.nextUrl.pathname.startsWith(`/${locale}`)) &&
-      !request.nextUrl.pathname.startsWith("/_next")
-    ) {
-      response = NextResponse.redirect(
-        new URL(`/${langFromPathname}${request.nextUrl.pathname}${queryParams ?? ""}`, request.url)
-      );
-    }
-  
-    const referer = request.headers.get("referer");
-    let langInReferer: string | undefined = undefined;
-    if (referer) {
-      const refererUrl = new URL(referer);
-      langInReferer = locales.find(locale => refererUrl.pathname.startsWith(`/${locale}`));
-    }
-  
-    if (langInReferer) {
-      response.cookies.set(CookiesKey.i18next, langInReferer);
-    } else {
-      response.cookies.set(CookiesKey.i18next, langFromPathname);
-    }
-  
-    return response;
-  };
+export const config = {
+  // matcher: '/:lng*'
+  matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)"],
+};
 
-  export async function middleware(request: NextRequest) {
-    // get the path name from server side
-    const requestHeaders = new Headers(request.headers);
-    requestHeaders.set("x-pathname", request.nextUrl.pathname);
-    let response = NextResponse.next({
-      request: {
-        headers: requestHeaders,
-      },
-    });
-  
-    response = checkLocal(request, response);
-    // response = validateIfRouteNeedsToLogin(request, response);
-  
-    // setIsFooterHidden(response.cookies, request.nextUrl.pathname);
-    // setIsDeliveryBarHidden(response.cookies, request.nextUrl.pathname);
-    // setDeviceId(request, response);
+export function middleware(req: NextRequest) {
+  let lng;
+  if (req.cookies.has(cookieName))
+    lng = acceptLanguage.get(req.cookies.get(cookieName)!.value);
+  if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
+  if (!lng) lng = defaultLocale;
+
+  // Redirect if lng in path is not supported
+  if (
+    !locales.some((loc: LocaleKeysType) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
+    !req.nextUrl.pathname.startsWith("/_next")
+  ) {
+    return NextResponse.redirect(
+      new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
+    );
+  }
+
+  if (req.headers.has("referer")) {
+    const refererUrl = new URL(req.headers.get("referer")!);
+    const lngInReferer = locales.find((l) =>
+      refererUrl.pathname.startsWith(`/${l}`)
+    );
+    const response = NextResponse.next();
+    if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
     return response;
   }
+
+  return NextResponse.next();
+}

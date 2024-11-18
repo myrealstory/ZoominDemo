@@ -12,11 +12,6 @@ export type PageProps = {
   }>;
 };
 
-export async function generateStaticParams() {
-  const supportedLocales = ["en", "tc"];
-  return supportedLocales.map((lang) => ({ lang }));
-}
-
 
 export default async function Page ({ params }: PageProps) {
 

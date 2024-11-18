@@ -18,6 +18,12 @@ export type LayoutProps = {
   children: React.ReactNode;
 };
 
+export async function generateStaticParams() {
+  const supportedLocales = ["en", "tc"];
+  return supportedLocales.map((lang) => ({ lang }));
+}
+
+
 export default async function RootLayout ({ children, params }: LayoutProps) {
   const { lang } = await params;
 
