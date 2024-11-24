@@ -7,7 +7,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors:{
+    colors: {
       lightGrey: "#9E9E9E",
       black: "#000000",
       dark: "#262626",
@@ -24,10 +24,22 @@ const config: Config = {
       primaryColor: "#59e4a8",
       secondaryColor: "#13a164",
       thirdColor: "#75f5be",
-      contentBG: "#f7efcc",
-      transparent: "rgba(0,0,0,0)"
+      secondaryBlue: "#2C6EEF",
+      secondaryGreen: "#32AB78",
+      secondaryRed: "#BC434A",
+      brighterBlue:"#79A6FF",
+      brighterGreen:"#7DEDB2",
+      brighterRed:"#FF7A85",
+      primary:"#6A7BFF",
+      secondary:"#008cba",
+      blue200:"rgb(191 219 254)",
+      pink200:"rgb(255 191 219)",
+      contentBG: "#f7efcc", 
+      offStatus:"#ffa500",
+      darkBlue:"#052331",
+      transparent: "rgba(0,0,0,0)",
     },
-    backgroundImage:{
+    backgroundImage: {
       MainBG: "url('../../../images/bg.png')",
     },
     extend: {
@@ -35,7 +47,6 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-          
       },
     },
   },

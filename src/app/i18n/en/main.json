@@ -63,6 +63,17 @@
     "countryLabel":"Country",
     "region1Label":"Region 1",
     "region2Label":"Region 2",
-    "endContent":"checkout my more details in cakes or 104 TW resume"
+    "endContent":"checkout my more details in cakes or 104 TW resume",
+    "banner":{
+      "published":"Publish",
+      "unpublished":"Unpublished",
+      "edit":"Edit",
+      "modalChangeStatusTttle":"Change Status",
+      "delete":"Delete",
+      "expire":"Expire",
+      "beforeDay": "{{dayLeft}} day(s) left",
+      "todayDay": "Expires today",
+      "expired": "Expired {{dayLeft}} day(s) ago"
+    }
   }
 }

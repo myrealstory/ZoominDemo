@@ -1,4 +1,5 @@
 import { AreasListType, nameProps, Region1Props } from "@/type/Area";
+import { TFunction } from "next-i18next";
 
 export const getYearsInRange = (start: string, end: string) => {
     const startYear = new Date(start).getFullYear();
@@ -34,5 +35,23 @@ export const combineEnZH = (en: string, zh: string) => {
         Areas: region2Mapped,
       };
     });
+  };
+  
+  export const dayLeft = (compareDay:string,t:TFunction):{message: string; status:string} => {
+    const [year, month, day] = compareDay.split("-").map(Number);
+    const compareDate = new Date(year,month-1 , day); //parse the date
+    const today = new Date();
+    today.setHours(0,0,0,0); //Normalize time
+  
+    const differenceInMilliseconds = compareDate.getTime() - today.getTime();
+    const dayLeft = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24)); // Convert ms to days
+  
+    if(dayLeft > 0) {
+      return { message : t("examples.banner.beforeDay" , {dayLeft:dayLeft}), status: "future"};
+    }else if( dayLeft === 0){
+      return { message : t("examples.banner.todayDay"), status: "today"};
+    }else {
+      return { message : t("examples.banner.expired" , {dayLeft:Math.abs(dayLeft)}), status: "past"};
+    }
   };
   

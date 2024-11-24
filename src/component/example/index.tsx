@@ -5,6 +5,7 @@ import { Upload } from "./Upload";
 import { PasswordInput } from "./PasswordInput";
 import { DataAnalysis } from "./DataAnalysis";
 import Link from "next/link";
+import { Banner } from "./Banner";
 
 export const Example = ({ lang }: { lang: LocaleKeysType }) => {
   const { translate: t } = useTranslation(lang);
@@ -29,6 +30,9 @@ export const Example = ({ lang }: { lang: LocaleKeysType }) => {
           </div>
           <DataAnalysis lang={lang} />
         </div>
+      </div>
+      <div className="border-primaryColor border p-4">
+        <Banner lang={lang}/>
       </div>
       <div className="bg-primaryColor text-secondaryColor text-sm py-3 text-center">
         <Link href={"#jobExperience"}>{t("examples.endContent")}</Link>
