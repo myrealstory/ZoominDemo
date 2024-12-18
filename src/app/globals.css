@@ -87,7 +87,38 @@ body {
     @apply flex flex-row gap-2 text-secondaryColor lg:text-base text-sm  relative;
   }
 
+  .custom-Select-button {
+    @apply border-secondaryColor border-b  border-solid w-full py-2 text-sm bg-white hover:bg-secondaryBlue hover:text-white hover:font-semibold
+  }
+
+  .custom-scrollbar {
+    @apply overflow-y-auto;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-[4px] rounded-[20px];
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply rounded-[20px] bg-[#0b461c33];
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-[10px] bg-[#13a164];
+  }
+
+  
+
   /* .custom-Select select::after{
     @apply content-["⮟"] text-base absolute bottom-5 right-4 z-10 w-5 h-5 border border-solid border-transparent cursor-pointer ;
   } */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

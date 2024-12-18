@@ -87,9 +87,14 @@ export const DataAnalysis = ({ lang }: { lang: LocaleKeysType }) => {
     return areas
       .filter((region1) => findCountry.region1.includes(region1.id))
       .map((item) => (
-        <option key={item.AreaEN} value={item.AreaEN}>
-          {lang === "en" ? item.AreaEN : item.AreaCN}
-        </option>
+        // <option key={item.AreaEN} value={item.AreaEN}>
+        //   {lang === "en" ? item.AreaEN : item.AreaCN}
+        // </option>
+        {
+          label: item.AreaEN,
+          name: lang === "en" ? item.AreaEN : item.AreaCN,
+          value: combineEnZH(item.AreaEN, item.AreaCN),
+        }
       ));
   }, [selectValue.country, clientData, areas, lang]); // Depend on the country and data source
 
@@ -101,9 +106,14 @@ export const DataAnalysis = ({ lang }: { lang: LocaleKeysType }) => {
 
     if (selectedRegion1) {
       return selectedRegion1.Areas.map((item) => (
-        <option key={item.en} value={item.en}>
-          {lang === "en" ? item.en : item.cn}
-        </option>
+        // <option key={item.en} value={item.en}>
+        //   {lang === "en" ? item.en : item.cn}
+        // </option>
+        {
+          label: item.en,
+          name: lang === "en" ? item.en : item.cn,
+          value: combineEnZH(item.en, item.cn),
+        }
       ));
     }
 
@@ -142,13 +152,13 @@ export const DataAnalysis = ({ lang }: { lang: LocaleKeysType }) => {
       <div className="max-h-[350px] h-full overflow-y-auto p-4 border border-secondaryColor text-secondaryColor text-xs">
         <RenderJson data={ClientData} />
       </div>
-      <div className="flex md:flex-row flex-col gap-4 md:items-center px-4 pb-6 md:pb-0">
+      <div className="flex md:flex-row flex-col xl:gap-12 md:gap-10 md:items-center px-4 pb-6 md:pb-0">
         <CustomSelect
           lang={lang}
           label={t("examples.countryLabel")}
           className="max-w-[200px] w-full"
           onChangeById={handleAddCountry}
-          allowEmpty
+          allowEmpty={"Select Country"}
           firstOption={t("examples.selectCountry")}
           options={countryData}
 
@@ -159,12 +169,13 @@ export const DataAnalysis = ({ lang }: { lang: LocaleKeysType }) => {
           label={t("examples.region1Label")}
           className="max-w-[200px] w-full"
           onChange={(e) => handleChange(e, "region1")}
-          allowEmpty
+          allowEmpty={"Select Region1"}
           disabled={
             selectValue.country.length === 0 || region1Options.length === 0
           }
           firstOption={t("examples.region1")}
-          renderOptions={() => region1Options}
+          options={region1Options}
+          // renderOptions={() => region1Options}
           // error={formValidation.region1.message}
         />
         <CustomSelect
@@ -172,10 +183,11 @@ export const DataAnalysis = ({ lang }: { lang: LocaleKeysType }) => {
           label={t("examples.region2Label")}
           className="max-w-[200px] w-full"
           onChange={(e) => handleChange(e, "region2")}
-          allowEmpty
+          allowEmpty={"Select Region2"}
           firstOption={t("examples.region2")}
           disabled={region2Options.length === 0}
-          renderOptions={() => region2Options}
+          options={region2Options}
+          // renderOptions={() => region2Options}
           // error={formValidation.region2.message}
         />
       </div>
